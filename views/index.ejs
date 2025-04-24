@@ -1,0 +1,26 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rain Tomorrow?</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Check if it will rain tomorrow</h1>
+  <form action="/weather" method="POST">
+    <input type="text" name="city" placeholder="Enter city" required>
+    <button type="submit">Check</button>
+  </form>
+   <!-- Display the forecast result -->
+   <% if (forecast) { %>
+    <h2><%= forecast %></h2>
+  <% } %>
+
+  <!-- Display an error message if there is one -->
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+  
+</body>
+</html>
